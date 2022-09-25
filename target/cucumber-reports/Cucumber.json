@@ -1,0 +1,70 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 6,
+        "name": "Check Recruiter AI Login functionality",
+        "description": "",
+        "id": "recruiter-ai-features;check-recruiter-ai-login-functionality",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 22306371600,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user launch application",
+            "match": {
+              "location": "Stepdefinitions.user_launch_application()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10612803500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user enter valid credentials",
+            "match": {
+              "location": "Stepdefinitions.user_enter_valid_credentials()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2564424800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Close Browser",
+            "match": {
+              "location": "Stepdefinitions.close_Browser()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@RecruiterLogin"
+          }
+        ]
+      }
+    ],
+    "name": "Recruiter AI features",
+    "description": "Validation of Recruiter AI",
+    "id": "recruiter-ai-features",
+    "keyword": "Feature",
+    "uri": "featurefiles/featurefiles.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@tag"
+      }
+    ]
+  }
+]
