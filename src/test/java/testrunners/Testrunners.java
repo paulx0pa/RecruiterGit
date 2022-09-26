@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-@RunWith(Cucumber.class)
+//@RunWith(Cucumber.class)
 @CucumberOptions(features={"featurefiles/AiLogin.feature",
 		"featurefiles/AiLogout.feature",
 		"featurefiles/AiCreateNewJob.feature",
