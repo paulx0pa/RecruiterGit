@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class Stepdefinitions {
@@ -230,10 +231,156 @@ public void choose_office_location() throws Throwable {
 		Thread.sleep(2000);  
 		driver.findElement(By.xpath("//div[@class='ml-2']//child::button[contains(text(),'Submit')]")).click();
 	}
+	@When("^click on Add Collaborator Button$")
+	public void click_on_Add_Collaborator_Button() throws InterruptedException 
+	{
+		Thread.sleep(2000);	
+	 driver.findElement(By.xpath("/html/body/section/div[1]/div/div[3]/div/section/div/div/div[4]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div/div/button")).click();  
+	}
 
-	
+	@Then("^choose role of collaborator$")
+	public void choose_role_of_collaborator() throws InterruptedException
+	{
+	Thread.sleep(2000);
+	Select roleofCol=new Select(driver.findElement(By.xpath("//select[@name='selectedRoleId']"))); 
+	roleofCol.selectByVisibleText("Team Member");
+	Thread.sleep(2000);
+	}
 
+	@Then("^Select User$")
+	public void select_User() throws InterruptedException
+	{
+	WebElement selectUser=driver.findElement(By.xpath("//input[@id='react-select-28-input']"));
+	selectUser.sendKeys("Sai Kishore");
+	selectUser.sendKeys(Keys.ARROW_DOWN);
+	Thread.sleep(2000);
+	selectUser.sendKeys(Keys.ENTER);
+	Thread.sleep(2000); 
+	}
+
+	@Then("^click on Add button$")
+	public void click_on_Add_button()
+	{
+		driver.findElement(By.xpath("(//button[contains(text(),'Add')])[3]")).click(); 
+	}
 	
+@When("^add skills and Education$")
+public void add_skills_and_Education()
+{
+    driver.findElement(By.xpath("(//li[@class='sui-single-option-facet__item inactive'])[1]")).click();
+}
+    @When("^add industry field$")
+    public void add_industry_field() throws InterruptedException 
+    {
+    WebElement industry=driver.findElement(By.xpath("//input[@id='react-select-13-input']"));
+    industry.sendKeys("Computer Software");
+    Thread.sleep(2000);
+	industry.sendKeys(Keys.ARROW_DOWN);
+	Thread.sleep(2000);
+	industry.sendKeys(Keys.ENTER);
+	Thread.sleep(2000); 
+    }
+    @When("^add keyword field$")
+    public void add_keyword_field() throws InterruptedException 
+    {
+	WebElement keyword =driver.findElement(By.xpath("//input[@id='react-select-14-input']"));
+    keyword.sendKeys("java");
+	keyword.sendKeys(Keys.ARROW_DOWN);
+	Thread.sleep(2000);
+	keyword.sendKeys(Keys.ENTER);
+	Thread.sleep(2000);
+    }
+    @When("^add Education$")
+    public void add_Education() throws Throwable {
+       
+    
+	WebElement education=driver.findElement(By.xpath("//input[@id='react-select-15-input']"));
+	education.sendKeys("bsc");
+	education.sendKeys(Keys.ARROW_DOWN);
+	Thread.sleep(2000);
+	education.sendKeys(Keys.ENTER);
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//a[@class='sui-single-option-facet__link active']")).click();
+}
+@When("^click on Additional Information$")
+public void click_on_Additional_Information() throws Throwable {
+   driver.findElement(By.xpath("/html/body/section/div[1]/div/div[3]/div/section/div/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div/div/ul/li[3]/a")).click();
+}
+@When("^add Work Location$")
+   public void add_Work_Location() throws Throwable {
+      
+   
+   driver.findElement(By.xpath("//textarea[@id='workLocation']")).sendKeys("Hyderabad");
+   }
+@When("^add working Hours$")
+public void add_working_Hours() throws Throwable {
+   
+
+   driver.findElement(By.xpath("//textarea[@name='workHours']")).sendKeys("8hrs");
+}
+@When("^enter minimal Annual Salary$")
+public void enter_minimal_Annual_Salary() throws Throwable {
+  
+
+   driver.findElement(By.xpath("//input[@id='minSalary']")).sendKeys("30,000");
+}
+@When("^enter maximum Annual Salary$")
+public void enter_maximum_Annual_Salary() throws Throwable {
+   
+
+   driver.findElement(By.xpath("//input[@id='maxSalary']")).sendKeys("1,00,000");
+}
+
+@When("^add pre screening questions$")
+public void add_pre_screening_questions() throws Throwable {
+   driver.findElement(By.xpath("/html/body/section/div[1]/div/div[3]/div/section/div/div/div[2]/div[3]/div[2]/div/div[1]/div/div/div/div/ul/li[4]/a")).click();
+}
+@When("^click on Add Question button$")
+   public void click_on_Add_Question_button() throws Throwable 
+   {
+       
+   driver.findElement(By.xpath("//button[contains(text(),'Select Questions')]")).click();
+   }
+@When("^enter Question$")
+public void enter_Question() throws Throwable {
+    
+
+   driver.findElement(By.xpath("(//button[contains(text(),'Add')])[1]")).click();
+   driver.findElement(By.xpath("//textarea[@name='question']")).sendKeys("what is your graduation CGPA?");
+}
+@When("^choose the Category of Question$")
+public void choose_the_Category_of_Question() throws Throwable {
+    
+
+   WebElement category=driver.findElement(By.xpath("//input[@id='react-select-13-input']"));
+   category.sendKeys("HR");
+   category.sendKeys(Keys.ARROW_DOWN);
+   Thread.sleep(2000);
+   category.sendKeys(Keys.ENTER);
+   Thread.sleep(2000);
+}
+@Then("^click on Submit Button$")
+public void click_on_Submit_Button() throws Throwable {
+   
+
+   driver.findElement(By.xpath("(//button[contains(text(),'Submit')])[1]")).click();
+   Thread.sleep(2000);
+}
+@Then("^Select questions from Questions List$")
+public void select_questions_from_Questions_List() throws Throwable {
+  
+
+
+   driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[2]")).click();
+   Thread.sleep(2000);
+}
+@Then("^click on Add Selected$")
+public void click_on_Add_Selected() throws Throwable {
+  
+
+   driver.findElement(By.xpath("//button[contains(text(),'Add Selected')]")).click();
+   Thread.sleep(2000);
+}	
 }
 
 

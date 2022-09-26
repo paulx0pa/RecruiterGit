@@ -1,18 +1,6 @@
 @tag
-Feature: Recruiter AI features
-Validation of Recruiter AI
-
-@RecruiterLogin
-Scenario:Check Recruiter AI Login functionality
-Given user launch application
-When user enter valid credentials
-And Close Browser
-@RecruiterLogout		
-Scenario:Check Recruiter AI Logout functionality
-Given user launch application
-When user enter valid credentials
-When user click on logout
-And Close Browser
+Feature:Create New Job Feature
+Create new job with basic details
 @CreateNewJob
 Scenario:Check Recruiter AI Create New Job functionality
 Given user launch application
@@ -35,3 +23,6 @@ And add no of vacancies
 And add Job Description
 And add Job Requirements
 And choose office location
+
+
+
