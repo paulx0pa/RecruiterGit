@@ -21,19 +21,11 @@ public class Stepdefinitions {
 		
 
 driver.get("https://google.com");
-		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-		ChromeOptions options = new ChromeOptions();
-options.addArguments("start-maximized"); // open Browser in maximized mode
-options.addArguments("disable-infobars"); // disabling infobars
-options.addArguments("--disable-extensions"); // disabling extensions
-options.addArguments("--disable-gpu"); // applicable to windows os only
-options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-options.addArguments("--no-sandbox"); // Bypass OS security model
-WebDriver driver = new ChromeDriver(options);
-       // driver = new ChromeDriver();
-       // driver.manage().deleteAllCookies();
-       // driver.manage().window().maximize();
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
+        driver = new ChromeDriver();
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("http://staging.x0pa.ai/app/roboroy");  
         driver.findElement(By.id("hs-eu-confirmation-button")).click();
         driver.findElement(By.linkText("Candidate Login")).click();   
