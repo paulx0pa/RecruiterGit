@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
 import cucumber.api.java.en.Given;
@@ -17,11 +18,22 @@ public class Stepdefinitions {
 	public static WebDriver driver;
 	@Given("^user launch application$")
 	public void user_launch_application() throws Throwable {
+		
+
+driver.get("https://google.com");
 		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-        driver = new ChromeDriver();
-        driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		ChromeOptions options = new ChromeOptions();
+options.addArguments("start-maximized"); // open Browser in maximized mode
+options.addArguments("disable-infobars"); // disabling infobars
+options.addArguments("--disable-extensions"); // disabling extensions
+options.addArguments("--disable-gpu"); // applicable to windows os only
+options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+options.addArguments("--no-sandbox"); // Bypass OS security model
+WebDriver driver = new ChromeDriver(options);
+       // driver = new ChromeDriver();
+       // driver.manage().deleteAllCookies();
+       // driver.manage().window().maximize();
+        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("http://staging.x0pa.ai/app/roboroy");  
         driver.findElement(By.id("hs-eu-confirmation-button")).click();
         driver.findElement(By.linkText("Candidate Login")).click();   
