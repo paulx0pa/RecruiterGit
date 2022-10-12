@@ -18,7 +18,7 @@ public class Stepdefinitions {
 	public static WebDriver driver;
 	@Given("^user launch application$")
 	public void user_launch_application() throws Throwable {
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
