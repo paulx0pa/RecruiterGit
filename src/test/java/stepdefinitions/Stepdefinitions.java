@@ -21,7 +21,7 @@ public class Stepdefinitions {
 		
 
 driver.get("https://google.com");
-		System.setProperty("webdriver.chrome.driver", "/home/azureuser/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
