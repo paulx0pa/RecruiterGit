@@ -23,9 +23,9 @@ public class Stepdefinitions {
 		options.addArguments("headless");
 		options.addArguments("disable-gpu");
 		driver=new ChromeDriver(options);
-		driver = new ChromeDriver();
-       driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
+       //driver = new ChromeDriver();
+       //driver.manage().deleteAllCookies();
+       // driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("http://staging.x0pa.ai/app/roboroy");  
         driver.findElement(By.id("hs-eu-confirmation-button")).click();
