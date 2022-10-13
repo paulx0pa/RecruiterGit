@@ -55,7 +55,7 @@ public class Stepdefinitions {
 	{
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[@aria-label='Logout']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 	}
 
 	@When("^User clicks on Jobs Menu$")
