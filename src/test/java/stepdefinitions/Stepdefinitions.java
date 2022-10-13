@@ -61,8 +61,8 @@ public class Stepdefinitions {
 	@When("^User clicks on Jobs Menu$")
 	public void user_clicks_on_Jobs_Menu() throws InterruptedException
 	{
-		Thread.sleep(4000);
-		driver.findElement(By.xpath("/html/body/section/div[1]/div/header/nav/ul/li[2]/a/span/b")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/section/div[1]/div/header/nav/ul/li[2]/a")).click();
 				    
 	}
 
