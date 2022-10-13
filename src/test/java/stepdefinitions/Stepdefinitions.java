@@ -62,7 +62,7 @@ public class Stepdefinitions {
 	public void user_clicks_on_Jobs_Menu() throws InterruptedException
 	{
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html/body/section/div[1]/div/header/nav/ul/li[2]/a")).click();
+		driver.findElement(By.xpath("(//b[text()='Jobs'])[1]")).click();
 				    
 	}
 
